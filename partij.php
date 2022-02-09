@@ -12,7 +12,12 @@
         <a class="back" href="entercode.php">terug knop</a>
     </div>
     <div>
-        <p class="top"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <p class="top"> Kies de partij waar u voor wilt stemmen. </p>
+    </div>
+
+    <div>
+       <p> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> tekst naast foto </p>
+        <a href="persoon.php" class="button"> button onder de foto</a>
     </div>
 </body>
-</html>
+</html> 
