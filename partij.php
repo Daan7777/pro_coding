@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,13 @@
     <title>partij!</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <?php
+    if (empty($_SESSION)) session_start();
+    // print_r($_SESSION);
+    if (empty($_SESSION["code"])) header("Location: ./");
+    ?>
     <div>
         <a class="back" href="entercode.php">terug knop</a>
     </div>
@@ -16,8 +23,9 @@
     </div>
 
     <div>
-       <p> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> tekst naast foto </p>
+        <p> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> tekst naast foto </p>
         <a href="persoon.php" class="button"> button onder de foto</a>
     </div>
 </body>
-</html> 
+
+</html>

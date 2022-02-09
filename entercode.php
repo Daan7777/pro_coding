@@ -11,6 +11,9 @@
 
 <body>
     <?php
+    if (empty($_SESSION)) session_start();
+    // print_r($_SESSION);
+    if (!empty($_SESSION)) session_destroy();
     $errorMessage = "";
     $code = "";
 
@@ -24,15 +27,12 @@
             } elseif (strlen($code) != 8) {
                 $errorMessage = "Code moet 8 cijfers lang zijn.";
             } else {
-                // check the code in the database
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
                 $dbname = "pro_coding";
 
-                // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
-                // Check connection
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
@@ -40,12 +40,15 @@
                 $sql = "SELECT id, entered, used FROM codes WHERE code=" . $code;
                 $result = $conn->query($sql);
 
-                echo $result->num_rows;
+                // echo $result->num_rows;
                 if ($result->num_rows == 1) {
-                    // output data of each row
                     $row = $result->fetch_assoc();
-                    echo "entered: " . $row["entered"] . " - used: " . $row["used"];
+                    // echo "entered: " . $row["entered"] . " - used: " . $row["used"];
                     if (!empty($row["used"])) $errorMessage = "code is al gebruikt";
+                    else {
+                        $_SESSION["code"] = $code;
+                        header("Location: ./partij.php");
+                    }
                     if (empty($row["entered"])) $conn->query("UPDATE codes SET entered = CURRENT_TIMESTAMP WHERE id = " . $row["id"]);
                 } else {
                     // echo "0 results";
