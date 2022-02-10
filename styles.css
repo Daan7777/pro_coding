@@ -113,3 +113,8 @@ input::-webkit-inner-spin-button {
   float:right;
   margin-right: 80px;
 }
+
+.table_tekst{
+  font-size: 15px;
+  max-width: 150px;
+}

@@ -26,7 +26,7 @@
         <table class="left"> <!-- partij links. -->
             <tr>
                 <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th> {Partij slogan} </th>
+                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
             </tr>
             <tr>
                 <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
@@ -35,7 +35,7 @@
         <table class="right"> <!-- partij rechts. -->
             <tr>
                 <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th> {Partij slogan} </th>
+                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
             </tr>
             <tr>
                 <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
@@ -46,7 +46,7 @@
         <table class="left"> <!-- partij links. -->
             <tr>
                 <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th> {Partij slogan} </th>
+                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
             </tr>
             <tr>
                 <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
@@ -55,7 +55,7 @@
         <table class="right"> <!-- partij rechts. -->
             <tr>
                 <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th> {Partij slogan} </th>
+                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
             </tr>
             <tr>
                 <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
@@ -66,7 +66,7 @@
         <table class="left"> <!-- partij links. -->
             <tr>
                 <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th> {Partij slogan} </th>
+                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
             </tr>
             <tr>
                 <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
@@ -75,7 +75,7 @@
         <table class="right"> <!-- partij rechts. -->
             <tr>
                 <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th> {Partij slogan} </th>
+                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
             </tr>
             <tr>
                 <th> <a href="persoon.php" class="button"> {Partij naam}</a> </th>
