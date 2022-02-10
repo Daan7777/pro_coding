@@ -37,7 +37,7 @@
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql = "SELECT id, entered, used FROM codes WHERE code=" . $code;
+                $sql = "SELECT id, entered, used, valid_from, valid_to FROM codes WHERE code=" . $code;
                 $result = $conn->query($sql);
 
                 // echo $result->num_rows;
@@ -45,6 +45,8 @@
                     $row = $result->fetch_assoc();
                     // echo "entered: " . $row["entered"] . " - used: " . $row["used"];
                     if (!empty($row["used"])) $errorMessage = "code is al gebruikt";
+                    elseif (time() < strtotime($row["valid_from"])) $errorMessage = "code is nog niet geldig";
+                    elseif (time() > strtotime($row["valid_to"])) $errorMessage = "code is niet meer geldig";
                     else {
                         $_SESSION["code"] = $code;
                         header("Location: ./partij.php");
