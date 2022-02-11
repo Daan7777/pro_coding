@@ -25,7 +25,7 @@ body {
 }
 .uitleg {
   width: 50%;
-  padding-top: 200px;
+  padding-top: 50px;
 }
 form {
   width: 300px;
@@ -117,4 +117,8 @@ input::-webkit-inner-spin-button {
 .table_tekst{
   font-size: 15px;
   max-width: 150px;
+}
+
+.bold {
+  font-weight: bold;
 }
