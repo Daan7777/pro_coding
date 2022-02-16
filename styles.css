@@ -136,3 +136,13 @@ button {
 .bold {
   font-weight: bold;
 }
+
+.vvd {
+  max-height: 150px;
+  max-width: 150px;
+}
+
+.blok {
+  max-width: 300px;
+  max-height: 300px;
+}

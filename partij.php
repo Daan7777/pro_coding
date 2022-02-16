@@ -1,3 +1,5 @@
+<?php include('includes/database.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,98 +23,12 @@
     </div>
     <div>
         <p class="top"> Kies de partij waar u voor wilt stemmen. </p>
-    </div>
-    <div> <!-- Partij slogan en partij naam moet uit de database komen. En als je die naam selecteerd moet naar de goeie mensen van die partij pagina komen. -->
-        <table class="left"> <!-- partij links. -->
-            <tr>
-                <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
-            </tr>
-            <tr>
-                <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
-            </tr>
-        </table>
-        <table class="right"> <!-- partij rechts. -->
-            <tr>
-                <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
-            </tr>
-            <tr>
-                <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
-            </tr>
-        </table>
-    </div>
-    <div> 
-        <table class="left"> <!-- partij links. -->
-            <tr>
-                <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
-            </tr>
-            <tr>
-                <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
-            </tr>
-        </table>
-        <table class="right"> <!-- partij rechts. -->
-            <tr>
-                <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
-            </tr>
-            <tr>
-                <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
-            </tr>
-        </table>
-    </div>
-    <div> 
-        <table class="left"> <!-- partij links. -->
-            <tr>
-                <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
-            </tr>
-            <tr>
-                <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
-            </tr>
-        </table>
-        <table class="right"> <!-- partij rechts. -->
-            <tr>
-                <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
-            </tr>
-            <tr>
-                <th> <a href="persoon.php" class="button"> {Partij naam}</a> </th>
-            </tr>
-        </table>
-    </div>
-    <div> 
-        <table class="left"> <!-- partij links. -->
-            <tr>
-                <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
-            </tr>
-            <tr>
-                <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
-            </tr>
-        </table>
-        <table class="right"> <!-- partij rechts. -->
-            <tr>
-                <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
-            </tr>
-            <tr>
-                <th> <a href="persoon.php" class="button"> {Partij naam}</a> </th>
-            </tr>
-        </table>
-    </div>
-    <div> 
-        <table class="left"> <!-- partij links. -->
-            <tr>
-                <th> <img src="images/avatar.jpg" class="logo" alt="avatar pic" width="200" height="200"> </th>
-                <th class="table_tekst"> {Partij slogan} Lorem ipsum dolor sit amet, consectetur adipiscing elit. </th>
-            </tr>
-            <tr>
-                <th> <a href="persoon.php" class="button">  {Partij naam}</a> </th>
-            </tr>
-        </table>
+    </div> 
+
+
+
+    <div class="blok">
+        <img src="./partij_logo's/vvd_logo.png" alt="vvd logo " class="vvd">
+        <p> tekst </p>
     </div>
 </body>
-
-</html>
