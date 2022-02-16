@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `gemeentes` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table pro_coding.gemeentes: ~0 rows (approximately)
+-- Dumping data for table pro_coding.gemeentes: ~1 rows (approximately)
 /*!40000 ALTER TABLE `gemeentes` DISABLE KEYS */;
 INSERT INTO `gemeentes` (`id`, `naam`) VALUES
 	(1, 'Schagen');
@@ -322,15 +322,15 @@ CREATE TABLE IF NOT EXISTS `partijen` (
 -- Dumping data for table pro_coding.partijen: ~9 rows (approximately)
 /*!40000 ALTER TABLE `partijen` DISABLE KEYS */;
 INSERT INTO `partijen` (`id`, `naam`, `gemeente_id`, `slogan`) VALUES
-	(1, 'CDA', 1, NULL),
-	(2, 'Seniorenpartij', 1, NULL),
-	(3, 'VVD', 1, NULL),
-	(4, 'JessLokaal', 1, NULL),
-	(5, 'Partij van de Arbeid', 1, NULL),
-	(6, 'GroenLinks', 1, NULL),
-	(7, 'D66', 1, NULL),
-	(8, 'Socialistische Partij', 1, NULL),
-	(9, 'wij en Schagen voor u', 1, NULL);
+	(1, 'CDA', 1, 'Voor de volgende generatie!'),
+	(2, 'Seniorenpartij', 1, 'Voor iedereen!'),
+	(3, 'VVD', 1, 'Samen sterker verder!'),
+	(4, 'JessLokaal', 1, 'Een nuchtere kijk op onze toekomst!'),
+	(5, 'Partij van de Arbeid', 1, 'Socialer, groener en eerlijker!'),
+	(6, 'GroenLinks', 1, 'Samen verandering mogelijk maken!'),
+	(7, 'D66', 1, 'Laat iedereen vrij, maar niemand vallen!'),
+	(8, 'Socialistische Partij', 1, 'Menselijke waardigheid, gelijkwaardigheid en solidariteit!'),
+	(9, 'wij en Schagen voor u', 1, 'Samen voor Elkaar!');
 /*!40000 ALTER TABLE `partijen` ENABLE KEYS */;
 
 -- Dumping structure for table pro_coding.plaatsen
