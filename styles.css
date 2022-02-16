@@ -33,3 +33,7 @@ body {
     width: 50%;
     padding-top: 200px;
   }
+
+
+  .wrapper {text-align:center;}
+   button {width:33%; height:150px;}
