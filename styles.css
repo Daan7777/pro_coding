@@ -3,6 +3,8 @@ body {
   margin: 0 auto;
   text-align: center;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
   font-size: 35px;
 }
 
