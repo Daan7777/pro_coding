@@ -29,8 +29,8 @@
                 $errorMessage = "Code moet 8 cijfers lang zijn.";
             } else {
                 $servername = "localhost";
-                $username = "root";
-                $password = "";
+                $username = "stemapp";
+                $password = "XA3OVAMe6ecI8a657OQ2VaRO6Ey6nO";
                 $dbname = "pro_coding";
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -73,7 +73,7 @@
 
     <p class="center uitleg bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ante in odio pellentesque blandit ut eu libero. Nulla purus ex, semper viverra efficitur eu, ornare ut nisi. Aenean nec tellus rutrum, condimentum nibh in, condimentum urna. Pellentesque ut ultrices tortor. Cras varius nunc et volutpat fringilla.</p>
     <form class="center" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <input id="code_input" name="code" type="number" placeholder="Code" autocomplete="off"><br>
+        <input id="code_input" name="code" type="number" placeholder="Code" autocomplete="off" autofocus><br>
         <input id="submit" type="submit" value="checken" disabled>
     </form>
 
@@ -97,7 +97,7 @@
             // console.log('reset')
             // alert('hallo?')
             clearTimeout(inactivityTimeout)
-            inactivityTimeout = setTimeout(onUserInactivity, .1 * 60 * 1000)
+            inactivityTimeout = setTimeout(onUserInactivity, 2 * 60 * 1000)
         }
         window.onload = resetTimeout;
         window.onscroll = resetTimeout;

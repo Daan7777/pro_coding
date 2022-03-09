@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "stemapp";
+$password = "XA3OVAMe6ecI8a657OQ2VaRO6Ey6nO";
 $dbname = "pro_coding";
 
 // Create connection
@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) { 
-        var_dump( $row )
+        var_dump( $row );
     }
 } else {
     echo "0 results";

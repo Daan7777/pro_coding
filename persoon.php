@@ -29,8 +29,8 @@
     <!-- Database link -->
     <?php
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "stemapp";
+    $password = "XA3OVAMe6ecI8a657OQ2VaRO6Ey6nO";
     $dbname = "pro_coding";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
