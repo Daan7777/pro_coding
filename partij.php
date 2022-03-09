@@ -23,60 +23,60 @@
     </div>
     <div>
         <p class="top"> Kies de partij waar u voor wilt stemmen. </p>
-    </div> 
-
-
-
-    <div class="blok">
-        <img src="./partij_logo's/d66_logo.png" alt="d66 logo " class="partij">
-        <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        <p> naam/button </p>
     </div>
 
+
+
     <div class="blok">
-        <img src="./partij_logo's/cda_logo.png" alt="cda logo " class="partij">
+        <img src="./partij_logos/1.png" alt="cda logo " class="partij">
         <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
         <p> naam/button </p>
     </div>
-    
+
     <div class="blok">
-        <img src="./partij_logo's/groenlinks_logo.png" alt="groenlinks logo " class="partij">
+        <img src="./partij_logos/2.jpg" alt="seniorenpartij logo " class="partij">
         <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
         <p> naam/button </p>
     </div>
-    
+
     <div class="blok">
-        <img src="./partij_logo's/jesslokaal_logo.png" alt="jesslokaal logo " class="partij">
+        <img src="./partij_logos/3.png" alt="vvd logo " class="partij">
         <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
         <p> naam/button </p>
     </div>
-    
+
     <div class="blok">
-        <img src="./partij_logo's/pdva_logo.png" alt="pvda logo " class="partij">
+        <img src="./partij_logos/4.png" alt="jesslokaal logo " class="partij">
         <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
         <p> naam/button </p>
     </div>
-    
+
     <div class="blok">
-        <img src="./partij_logo's/socialistischepartij_logo.png" alt="socialistischepartij logo " class="partij">
+        <img src="./partij_logos/5.png" alt="pvda logo " class="partij">
         <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
         <p> naam/button </p>
     </div>
-    
+
     <div class="blok">
-        <img src="./partij_logo's/sp_logo.jpg" alt="seniorenpartij logo " class="partij">
+        <img src="./partij_logos/6.png" alt="groenlinks logo " class="partij">
         <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
         <p> naam/button </p>
     </div>
-    
+
     <div class="blok">
-        <img src="./partij_logo's/vvd_logo.png" alt="vvd logo " class="partij">
+        <img src="./partij_logos/7.png" alt="d66 logo " class="partij">
         <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
         <p> naam/button </p>
     </div>
-    
+
     <div class="blok">
-        <img src="./partij_logo's/wens4u_logo.png" alt="wens4u logo " class="partij">
+        <img src="./partij_logos/8.png" alt="socialistischepartij logo " class="partij">
+        <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <p> naam/button </p>
+    </div>
+
+    <div class="blok">
+        <img src="./partij_logos/9.png" alt="wens4u logo " class="partij">
         <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
         <p> naam/button </p>
     </div>
