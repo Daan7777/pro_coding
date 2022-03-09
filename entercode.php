@@ -70,7 +70,7 @@
     }
     ?>
 
-    <p class="center uitleg bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ante in odio pellentesque blandit ut eu libero. Nulla purus ex, semper viverra efficitur eu, ornare ut nisi. Aenean nec tellus rutrum, condimentum nibh in, condimentum urna. Pellentesque ut ultrices tortor. Cras varius nunc et volutpat fringilla. Ut volutpat sagittis ipsum, volutpat imperdiet orci suscipit id. Morbi vel dignissim ante, ut semper enim. Aliquam vitae viverra est, id dapibus ligula. Aliquam erat volutpat. Etiam bibendum pellentesque risus, id fringilla enim semper finibus. Morbi placerat aliquet ex id sagittis. Vivamus a odio pellentesque, venenatis massa ac, luctus mi. Donec gravida risus vitae sem molestie mattis. Praesent iaculis erat et mi scelerisque, vel commodo urna tristique. Fusce pulvinar tellus in ipsum scelerisque, nec rhoncus dui egestas.</p>
+    <p class="center uitleg bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ante in odio pellentesque blandit ut eu libero. Nulla purus ex, semper viverra efficitur eu, ornare ut nisi. Aenean nec tellus rutrum, condimentum nibh in, condimentum urna. Pellentesque ut ultrices tortor. Cras varius nunc et volutpat fringilla.</p>
     <form class="center" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <input id="code_input" name="code" type="number" placeholder="Code" autocomplete="off"><br>
         <input id="submit" type="submit" value="checken" disabled>
@@ -87,12 +87,25 @@
         const input = document.getElementById('code_input');
         const submit = document.getElementById('submit');
 
+        function onUserInactivity() {
+            window.location.href = "./"
+        }
+        let inactivityTimeout;
+
+        function resetTimeout() {
+            console.log('reset')
+            clearTimeout(inactivityTimeout)
+            inactivityTimeout = setTimeout(onUserInactivity, 2 * 60 * 1000)
+        }
+        window.onload = resetTimeout;
+
         input.addEventListener('input', e => {
             if (input.value.length == 8) {
                 submit.removeAttribute('disabled');
             } else {
                 submit.setAttribute('disabled', '');
             }
+            resetTimeout()
         });
 
         var modal = document.getElementById("errorModal");
@@ -104,6 +117,7 @@
             if (e.target == modal) {
                 modal.style.display = "none";
             }
+            resetTimeout()
         }
     </script>
 </body>
