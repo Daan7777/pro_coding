@@ -1,5 +1,3 @@
-<?php include('includes/database.php'); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +16,7 @@
     // print_r($_SESSION);
     if (empty($_SESSION["code"])) header("Location: ./");
     ?>
+
     <div>
         <a class="back left" href="entercode.php">terug knop</a>
     </div>
@@ -25,59 +24,35 @@
         <p class="top"> Kies de partij waar u voor wilt stemmen. </p>
     </div>
 
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "pro_coding";
 
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-    <div class="blok">
-        <img src="./partij_logos/1.png" alt="cda logo " class="partij">
-        <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        <p> naam/button </p>
-    </div>
+    $sql = "SELECT * FROM partijen" ;
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) { 
+            // var_dump( $row ) ;
+            echo "<div class='blok'>";
+            echo "    <img src='./partij_logos/".$row['id'].".png' alt='".$row['naam']." logo' class='partij'>";
+            echo "    <p class='rechts'>".$row['slogan']."</p>";
+            echo "    <p class='midden'>".$row['naam']."</p>";
+            echo "</div>";
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+    ?>
 
-    <div class="blok">
-        <img src="./partij_logos/2.jpg" alt="seniorenpartij logo " class="partij">
-        <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        <p> naam/button </p>
-    </div>
-
-    <div class="blok">
-        <img src="./partij_logos/3.png" alt="vvd logo " class="partij">
-        <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        <p> naam/button </p>
-    </div>
-
-    <div class="blok">
-        <img src="./partij_logos/4.png" alt="jesslokaal logo " class="partij">
-        <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        <p> naam/button </p>
-    </div>
-
-    <div class="blok">
-        <img src="./partij_logos/5.png" alt="pvda logo " class="partij">
-        <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        <p> naam/button </p>
-    </div>
-
-    <div class="blok">
-        <img src="./partij_logos/6.png" alt="groenlinks logo " class="partij">
-        <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        <p> naam/button </p>
-    </div>
-
-    <div class="blok">
-        <img src="./partij_logos/7.png" alt="d66 logo " class="partij">
-        <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        <p> naam/button </p>
-    </div>
-
-    <div class="blok">
-        <img src="./partij_logos/8.png" alt="socialistischepartij logo " class="partij">
-        <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        <p> naam/button </p>
-    </div>
-
-    <div class="blok">
-        <img src="./partij_logos/9.png" alt="wens4u logo " class="partij">
-        <p class="rechts textright" maxlength="100"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        <p> naam/button </p>
-    </div>
+    
 </body>
