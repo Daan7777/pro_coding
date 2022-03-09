@@ -138,14 +138,29 @@ button {
   font-weight: bold;
 }
 
-.vvd {
+.partij {
   max-height: 150px;
   max-width: 150px;
 }
 
 .blok {
-  max-width: 300px;
+  margin-top: 30px;
+  max-width: 450px;
   max-height: 300px;
+  display: inline-block;
+}
+
+.rechts {
+  float: right;
+}
+
+.rechtsnaast {
+  float: right;
+  position: relative;
+}
+
+.textright {
+  font-size: 20px;
 }
 
 .progress {
