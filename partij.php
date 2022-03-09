@@ -38,7 +38,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM partijen" ;
+    $sql = "SELECT * FROM partijen WHERE gemeente_id = 1" ;
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
@@ -48,7 +48,7 @@
             echo "<div class='blok'>";
             echo "    <img src='./partij_logos/".$row['id'].".png' alt='".$row['naam']." logo' class='partij'>";
             echo "    <p class='rechts'>".$row['slogan']."</p>";
-            echo "    <a class='midden knop' href='persoon.php'>".$row['naam']."</a>";
+            echo "    <a class='midden knop' href='persoon.php?partij=".$row['id']."'>".$row['naam']."</a>";
             echo "</div>";
         }
     } else {
