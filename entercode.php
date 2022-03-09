@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <a style="position: absolute; color: transparent; padding: 50px; left: 0px; top: 0px;" href="./">terug</a>
     <?php
     if (empty($_SESSION)) session_start();
     // print_r($_SESSION);
@@ -93,11 +94,13 @@
         let inactivityTimeout;
 
         function resetTimeout() {
-            console.log('reset')
+            // console.log('reset')
+            // alert('hallo?')
             clearTimeout(inactivityTimeout)
-            inactivityTimeout = setTimeout(onUserInactivity, 2 * 60 * 1000)
+            inactivityTimeout = setTimeout(onUserInactivity, .1 * 60 * 1000)
         }
         window.onload = resetTimeout;
+        window.onscroll = resetTimeout;
 
         input.addEventListener('input', e => {
             if (input.value.length == 8) {
