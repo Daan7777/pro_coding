@@ -330,7 +330,7 @@ INSERT INTO `partijen` (`id`, `naam`, `gemeente_id`, `slogan`) VALUES
 	(6, 'GroenLinks', 1, 'Samen verandering mogelijk maken!'),
 	(7, 'D66', 1, 'Laat iedereen vrij, maar niemand vallen!'),
 	(8, 'Socialistische Partij', 1, 'Menselijke waardigheid, gelijkwaardigheid en solidariteit!'),
-	(9, 'wij en Schagen voor u', 1, 'Samen voor Elkaar!');
+	(9, 'Wens4u', 1, 'Samen voor Elkaar!');
 /*!40000 ALTER TABLE `partijen` ENABLE KEYS */;
 
 -- Dumping structure for table pro_coding.plaatsen
