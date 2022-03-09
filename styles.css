@@ -140,26 +140,29 @@ button {
 .partij {
   max-height: 150px;
   max-width: 150px;
+  float: left;
 }
 
 .blok {
   margin-top: 30px;
-  max-width: 450px;
+  margin-left: 100px;
+  margin-right: 100px;
+  max-width: 500px;
   max-height: 300px;
   display: inline-block;
 }
 
+.midden {
+  text-align: bottom;
+  height: 100px;
+  width: 200px;
+}
+
 .rechts {
-  float: right;
-}
-
-.rechtsnaast {
-  float: right;
-  position: relative;
-}
-
-.textright {
   font-size: 20px;
+  text-align: right;
+  text-align: top;
+  width: 300px;
 }
 
 .progress {
