@@ -20,7 +20,7 @@
     <!-- Terug knop + tekst. -->
     <div class="back left">
         <img src="./images/go_back.png" alt="go_back" style="width:50px;height:50px;">
-        <a class="nodecoration big" href="entercode.php">ga terug</a>
+        <a class="nodecoration big" href="partij.php">ga terug</a>
     </div>
     <div>
         <p class="top"> Kies de persoon waar u voor wilt stemmen. </p>
@@ -38,17 +38,19 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM partijen" ;
+    $sql = "SELECT * FROM kandidaten WHERE partij_id = " . $_GET['partij'] ;
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) { 
             // var_dump( $row ) ;
+            $filename = "./personen/".$row['id'].".png";
+            $exists = file_exists($filename);
+            if ($exists == false) $filename = "./personen/alt.png";
             echo "<div class='blok'>";
-            echo "    <img src='./partij_logos/".$row['id'].".png' alt='".$row['naam']." logo' class='partij'>";
-            echo "    <p class='rechts'>".$row['slogan']."</p>";
-            echo "    <a class='midden knop' href='persoon.php'>".$row['naam']."</a>";
+            echo "    <img src='" . $filename . "' alt='".$row['voornaam']." foto' class='partij'>";
+            echo "    <a class='midden knop'>".$row['voornaam'] . $row['achternaam']."</a>";
             echo "</div>";
         }
     } else {
