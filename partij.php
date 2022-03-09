@@ -19,7 +19,7 @@
     if (empty($_SESSION["code"])) header("Location: ./");
     ?>
     <div>
-        <a class="back" href="entercode.php">terug knop</a>
+        <a class="back left" href="entercode.php">terug knop</a>
     </div>
     <div>
         <p class="top"> Kies de partij waar u voor wilt stemmen. </p>
