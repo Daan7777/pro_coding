@@ -17,13 +17,16 @@
     if (empty($_SESSION["code"])) header("Location: ./");
     ?>
 
-    <div>
-        <a class="back left" href="entercode.php">terug knop</a>
+    <!-- Terug knop + tekst. -->
+    <div class="back left">
+        <img src="./images/go_back.png" alt="go_back" style="width:50px;height:50px;">
+        <a class="nodecoration big" href="entercode.php">ga terug</a>
     </div>
     <div>
         <p class="top"> Kies de partij waar u voor wilt stemmen. </p>
     </div>
 
+    <!-- Database link -->
     <?php
     $servername = "localhost";
     $username = "root";
@@ -45,7 +48,7 @@
             echo "<div class='blok'>";
             echo "    <img src='./partij_logos/".$row['id'].".png' alt='".$row['naam']." logo' class='partij'>";
             echo "    <p class='rechts'>".$row['slogan']."</p>";
-            echo "    <p class='midden'>".$row['naam']."</p>";
+            echo "    <a class='midden knop' href='persoon.php'>".$row['naam']."</a>";
             echo "</div>";
         }
     } else {
