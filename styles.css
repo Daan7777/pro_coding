@@ -72,9 +72,9 @@ input::-webkit-inner-spin-button {
 
 .top {
   color: brown;
-  text-align: center;
   padding-left: 300px;
   padding-right: 100px;
+  margin-top: 0px;
 }
 
 .uitleg {
