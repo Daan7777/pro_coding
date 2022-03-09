@@ -15,7 +15,7 @@
 
     function notHidden($var)
     {
-        return !str_starts_with($var, ".");
+        return $var[0] != ".";
     }
 
     $images = array_values(array_filter(scandir("welcome_images"), "notHidden"));
@@ -25,9 +25,7 @@
 
 <body>
     <p class="center uitleg bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <a class="start center" href="entercode.php">
-        <center>Inloggen</center>
-    </a>
+    <a class="start center" href="entercode.php">Inloggen</a>
     <script>
         const images = <?php echo json_encode($images); ?>;
         let i = 0;
