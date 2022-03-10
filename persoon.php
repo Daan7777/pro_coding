@@ -48,7 +48,7 @@
             $filename = "./images/kandidaten/".$row['id'].".jpg";
             $exists = file_exists($filename);
             if ($exists == false) $filename = "./images/persoon.png";
-            echo "<div class='blok'>";
+            echo "<div class='blok choose'>";
             echo "    <img src='" . $filename . "' alt='".$row['voornaam']." foto' class='partij'>";
             echo "    <a class='midden knop'>".$row['voornaam'] . $row['achternaam']."</a>";
             echo "</div>";
