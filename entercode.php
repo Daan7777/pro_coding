@@ -74,7 +74,7 @@
     }
     ?>
 
-    <p class="center uitleg bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ante in odio pellentesque blandit ut eu libero. Nulla purus ex, semper viverra efficitur eu, ornare ut nisi. Aenean nec tellus rutrum, condimentum nibh in, condimentum urna. Pellentesque ut ultrices tortor. Cras varius nunc et volutpat fringilla.</p>
+    <p class="center uitleg bold">Voer hier de 8 cijferige code in die je van meneer Oldenhof via de mail hebt gekregen.</p>
     <form class="center" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <input id="code_input" name="code" type="number" placeholder="Code" autocomplete="off" autofocus><br>
         <input id="submit" type="submit" value="checken" disabled>
