@@ -110,7 +110,6 @@ button {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   text-decoration: none;
-  color: brown;
 }
 
 .nodecoration {
@@ -158,6 +157,11 @@ button {
   float: left;
 }
 
+.partij2 {
+  max-height: 150px;
+  max-width: 150px;
+}
+
 .blok {
   margin-top: 30px;
   margin-left: 100px;
@@ -165,6 +169,15 @@ button {
   max-width: 500px;
   max-height: 300px;
   display: inline-block;
+}
+
+.choose {
+  color: green;
+}
+
+.choose:hover{
+  color: red;
+  background-color: gray;
 }
 
 .midden {
@@ -178,6 +191,7 @@ button {
   text-align: right;
   text-align: top;
   width: 300px;
+  color: black;
 }
 
 .progress {
