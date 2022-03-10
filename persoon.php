@@ -7,9 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>partij!</title>
     <link rel="stylesheet" href="styles.css">
+
+    
 </head>
 
 <body>
+<script>
+        //  href='goodbye.php?kandidaat=" . $row['id'] . "'
+        let vote;
+        const buttons = document.getElementsByClassName('kandidaat');
+        const send = document.getElementById('send');
+        const sendText = send.children[0];
+        const defaultSendText = sendText.innerText;
+        let timeout;
+
+        function resetSendButton() {
+            sendText.style = '';
+            sendText.innerText = defaultSendText;
+        }
+
+        function select(clickEvent) {
+            const id = clickEvent.target.parentElement.id;
+            document.getElementById(vote)?.classList.remove('selected');
+            vote = id;
+            const button = document.getElementById(id);
+            button.classList.add('selected');
+            resetSendButton();
+        }
+
+        // for (const button of buttons) {
+        //     button.onclick = button.ontouchstart = select;
+        // }
+
+        function send(clickEvent) {
+            if (!vote) {
+                sendText.style = 'color:red;'
+                sendText.innerText = 'Kies iemand'
+                if (timeout) clearTimeout(timeout);
+                timeout = setTimeout(resetSendButton, 10000);
+                return;
+            }
+            window.location = `./goodbye.php?kandidaat=${vote}`;
+        }
+    </script>
     <!-- PHP dat je terugstuurd als je geen code hebt ingevuld. -->
     <?php
     if (empty($_SESSION)) session_start();
@@ -48,9 +88,10 @@
             $filename = "./images/kandidaten/" . $row['id'] . ".jpg";
             $exists = file_exists($filename);
             if ($exists == false) $filename = "./images/persoon.png";
-            echo "<div class='blok choose kandidaat' id=" . $row['id'] . ">";
+            echo "<div class='blok choose kandidaat' onclick='select(this)' id=" . $row['id'] . ">";
             echo "    <img src='" . $filename . "' alt='" . $row['voornaam'] . " foto' class='partij'>";
-            echo "    <a class='midden knop'>" . $row['voornaam'] . " " . $row['achternaam'] . "</a>";
+            // echo "    <a class='midden knop'>" . $row['voornaam'] . " " . $row['achternaam'] . "</a>";
+            echo "    <a class='midden knop' href='./goodbye.php?kandidaat=".$row['id']."'>" . $row['voornaam'] . " " . $row['achternaam'] . "</a>";
             echo "</div>";
         }
     } else {
@@ -59,47 +100,10 @@
     $conn->close();
     ?>
 
-    <div class="back rightdown" id="send">
+    <!-- <div class="back rightdown" id="send" onclick="send">
         <a class="nodecoration big">Verzenden</a>
-    </div>
+    </div> -->
 
 
-    <script>
-        //  href='goodbye.php?kandidaat=" . $row['id'] . "'
-        let vote;
-        const buttons = document.getElementsByClassName('kandidaat');
-        const send = document.getElementById('send');
-        const sendText = send.children[0];
-        const defaultSendText = sendText.innerText;
-        let timeout;
-
-        function resetSendButton() {
-            sendText.style = '';
-            sendText.innerText = defaultSendText;
-        }
-
-        function select(clickEvent) {
-            const id = clickEvent.target.parentElement.id;
-            document.getElementById(vote)?.classList.remove('selected');
-            vote = id;
-            const button = document.getElementById(id);
-            button.classList.add('selected');
-            resetSendButton();
-        }
-
-        for (const button of buttons) {
-            button.onclick = select;
-        }
-
-        send.onclick = (clickEvent) => {
-            if (!vote) {
-                sendText.style = 'color:red;'
-                sendText.innerText = 'Kies iemand'
-                if (timeout) clearTimeout(timeout);
-                timeout = setTimeout(resetSendButton, 10000);
-                return;
-            }
-            window.location = `./goodbye.php?kandidaat=${vote}`;
-        }
-    </script>
+    
 </body>
