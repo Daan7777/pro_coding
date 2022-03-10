@@ -48,8 +48,8 @@
             $filename = "./personen/".$row['id'].".png";
             $exists = file_exists($filename);
             if ($exists == false) $filename = "./personen/alt.png";
-            echo "<div class='blok'>";
-            echo "    <img src='" . $filename . "' alt='".$row['voornaam']." foto' class='partij'>";
+            echo "<div class='blok choose'>";
+            echo "    <img src='" . $filename . "' alt='".$row['voornaam']." foto' class='partij2'>";
             echo "    <a class='midden knop'>".$row['voornaam'] . $row['achternaam']."</a>";
             echo "</div>";
         }
