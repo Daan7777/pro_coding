@@ -59,5 +59,7 @@
     $conn->close();
     ?>
 
-    
+<div class="back rightdown">
+        <a class="nodecoration big" href="goodbye.php">Verzenden</a>
+    </div>
 </body>
