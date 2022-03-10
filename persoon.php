@@ -38,19 +38,19 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM kandidaten WHERE partij_id = " . $_GET['partij'] ;
+    $sql = "SELECT * FROM kandidaten WHERE partij_id = " . $_GET['partij'];
     $result = $conn->query($sql);
-    
+
     if ($result->num_rows > 0) {
         // output data of each row
-        while($row = $result->fetch_assoc()) { 
+        while ($row = $result->fetch_assoc()) {
             // var_dump( $row ) ;
-            $filename = "./personen/".$row['id'].".png";
+            $filename = "./images/kandidaten/" . $row['id'] . ".jpg";
             $exists = file_exists($filename);
-            if ($exists == false) $filename = "./personen/alt.png";
-            echo "<div class='blok'>";
-            echo "    <img src='" . $filename . "' alt='".$row['voornaam']." foto' class='partij'>";
-            echo "    <a class='midden knop'>".$row['voornaam'] . $row['achternaam']."</a>";
+            if ($exists == false) $filename = "./images/persoon.png";
+            echo "<div class='blok choose kandidaat' id=" . $row['id'] . ">";
+            echo "    <img src='" . $filename . "' alt='" . $row['voornaam'] . " foto' class='partij'>";
+            echo "    <a class='midden knop'>" . $row['voornaam'] . " " . $row['achternaam'] . "</a>";
             echo "</div>";
         }
     } else {
@@ -59,5 +59,47 @@
     $conn->close();
     ?>
 
-    
+    <div class="back rightdown" id="send">
+        <a class="nodecoration big">Verzenden</a>
+    </div>
+
+
+    <script>
+        //  href='goodbye.php?kandidaat=" . $row['id'] . "'
+        let vote;
+        const buttons = document.getElementsByClassName('kandidaat');
+        const send = document.getElementById('send');
+        const sendText = send.children[0];
+        const defaultSendText = sendText.innerText;
+        let timeout;
+
+        function resetSendButton() {
+            sendText.style = '';
+            sendText.innerText = defaultSendText;
+        }
+
+        function select(clickEvent) {
+            const id = clickEvent.target.parentElement.id;
+            document.getElementById(vote)?.classList.remove('selected');
+            vote = id;
+            const button = document.getElementById(id);
+            button.classList.add('selected');
+            resetSendButton();
+        }
+
+        for (const button of buttons) {
+            button.onclick = select;
+        }
+
+        send.onclick = (clickEvent) => {
+            if (!vote) {
+                sendText.style = 'color:red;'
+                sendText.innerText = 'Kies iemand'
+                if (timeout) clearTimeout(timeout);
+                timeout = setTimeout(resetSendButton, 10000);
+                return;
+            }
+            window.location = `./goodbye.php?kandidaat=${vote}`;
+        }
+    </script>
 </body>

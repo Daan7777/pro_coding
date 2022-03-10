@@ -45,8 +45,13 @@
                 if ($result->num_rows == 1) {
                     $row = $result->fetch_assoc();
                     // echo "entered: " . $row["entered"] . " - used: " . $row["used"];
-                    if (!empty($row["used"])) $errorMessage = "code is al gebruikt";
-                    elseif (time() < strtotime($row["valid_from"])) $errorMessage = "code is nog niet geldig";
+                    // echo time();
+                    // echo "<br>";
+                    // echo strtotime($row["valid_to"]);
+                    if (!empty($row["used"])) {
+                        $errorMessage = "code is al gebruikt";
+                        $conn->query("INSERT INTO misbruik(code_id) VALUES(" . $row["id"] . ")");
+                    } elseif (time() < strtotime($row["valid_from"])) $errorMessage = "code is nog niet geldig";
                     elseif (time() > strtotime($row["valid_to"])) $errorMessage = "code is niet meer geldig";
                     else {
                         $_SESSION["code"] = $code;
@@ -71,7 +76,7 @@
     }
     ?>
 
-    <p class="center uitleg bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ante in odio pellentesque blandit ut eu libero. Nulla purus ex, semper viverra efficitur eu, ornare ut nisi. Aenean nec tellus rutrum, condimentum nibh in, condimentum urna. Pellentesque ut ultrices tortor. Cras varius nunc et volutpat fringilla.</p>
+    <p class="center uitleg bold">Voer hier de 8 cijferige code in die je van meneer Oldenhof via de mail hebt gekregen.</p>
     <form class="center" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <input id="code_input" name="code" type="number" placeholder="Code" autocomplete="off" autofocus><br>
         <input id="submit" type="submit" value="checken" disabled>
