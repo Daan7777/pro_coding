@@ -45,9 +45,9 @@
         // output data of each row
         while($row = $result->fetch_assoc()) { 
             // var_dump( $row ) ;
-            $filename = "./personen/".$row['id'].".png";
+            $filename = "./images/kandidaten/".$row['id'].".jpg";
             $exists = file_exists($filename);
-            if ($exists == false) $filename = "./personen/alt.png";
+            if ($exists == false) $filename = "./images/persoon.png";
             echo "<div class='blok'>";
             echo "    <img src='" . $filename . "' alt='".$row['voornaam']." foto' class='partij'>";
             echo "    <a class='midden knop'>".$row['voornaam'] . $row['achternaam']."</a>";

@@ -45,6 +45,9 @@
                 if ($result->num_rows == 1) {
                     $row = $result->fetch_assoc();
                     // echo "entered: " . $row["entered"] . " - used: " . $row["used"];
+                    // echo time();
+                    // echo "<br>";
+                    // echo strtotime($row["valid_to"]);
                     if (!empty($row["used"])) $errorMessage = "code is al gebruikt";
                     elseif (time() < strtotime($row["valid_from"])) $errorMessage = "code is nog niet geldig";
                     elseif (time() > strtotime($row["valid_to"])) $errorMessage = "code is niet meer geldig";

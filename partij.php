@@ -46,7 +46,7 @@
         while($row = $result->fetch_assoc()) { 
             // var_dump( $row ) ;
             echo "<div class='blok'>";
-            echo "    <img src='./partij_logos/".$row['id'].".png' alt='".$row['naam']." logo' class='partij'>";
+            echo "    <img src='./images/partijen/".$row['id'].".png' alt='".$row['naam']." logo' class='partij'>";
             echo "    <p class='rechts'>".$row['slogan']."</p>";
             echo "    <a class='midden knop' href='persoon.php?partij=".$row['id']."'>".$row['naam']."</a>";
             echo "</div>";
