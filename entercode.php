@@ -48,8 +48,10 @@
                     // echo time();
                     // echo "<br>";
                     // echo strtotime($row["valid_to"]);
-                    if (!empty($row["used"])) $errorMessage = "code is al gebruikt";
-                    elseif (time() < strtotime($row["valid_from"])) $errorMessage = "code is nog niet geldig";
+                    if (!empty($row["used"])) {
+                        $errorMessage = "code is al gebruikt";
+                        $conn->query("INSERT INTO misbruik(code_id) VALUES(" . $row["id"] . ")");
+                    } elseif (time() < strtotime($row["valid_from"])) $errorMessage = "code is nog niet geldig";
                     elseif (time() > strtotime($row["valid_to"])) $errorMessage = "code is niet meer geldig";
                     else {
                         $_SESSION["code"] = $code;

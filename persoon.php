@@ -50,7 +50,7 @@
             if ($exists == false) $filename = "./images/persoon.png";
             echo "<div class='blok choose'>";
             echo "    <img src='" . $filename . "' alt='".$row['voornaam']." foto' class='partij'>";
-            echo "    <a class='midden knop'>".$row['voornaam'] . $row['achternaam']."</a>";
+            echo "    <a class='midden knop' href='goodbye.php?kandidaat=".$row['id']."'>".$row['voornaam'] . " " . $row['achternaam']."</a>";
             echo "</div>";
         }
     } else {
