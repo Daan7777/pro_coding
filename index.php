@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <p class="center uitleg bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p class="center uitleg bold">Welkom bij de stemdoos.<br>Druk op "inloggen" om verder te gaan.</p>
     <a class="start center" href="entercode.php">Inloggen</a>
     <script>
         const images = <?php echo json_encode($images); ?>;
