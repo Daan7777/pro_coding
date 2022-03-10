@@ -182,9 +182,8 @@ button {
   color: green;
 }
 
-.choose:hover{
+.selected {
   color: red;
-  background-color: gray;
 }
 
 .midden {
