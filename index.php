@@ -18,7 +18,7 @@
         return $var[0] != ".";
     }
 
-    $images = array_values(array_filter(scandir("welcome_images"), "notHidden"));
+    $images = array_values(array_filter(scandir("images/welcome"), "notHidden"));
     ?>
 
 </head>
@@ -29,7 +29,7 @@
     <script>
         const images = <?php echo json_encode($images); ?>;
         let i = 0;
-        const setBackgroundImage = () => document.body.style.backgroundImage = `url(welcome_images/${images[i++%images.length]})`;
+        const setBackgroundImage = () => document.body.style.backgroundImage = `url(images/welcome/${images[i++%images.length]})`;
         setInterval(setBackgroundImage, 20 * 1000);
         setBackgroundImage();
     </script>
