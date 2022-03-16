@@ -24,7 +24,10 @@
 </head>
 
 <body>
-    <p class="center uitleg bold">Welkom bij de stemdoos.<br>Druk op "inloggen" om verder te gaan.</p>
+    <div class=" right">
+        <a class="nodecoration big" href="zetels.php">statistics</a>
+    </div>
+    <p class="center uitleg bold shadow">Welkom bij de stemdoos.<br>Druk op "inloggen" om verder te gaan.</p>
     <a class="start center" href="entercode.php">Inloggen</a>
     <script>
         const images = <?php echo json_encode($images); ?>;
